@@ -1,4 +1,4 @@
-const JWT = require('jsonwebtoken');
+const JWT = require("jsonwebtoken");
 
 const { JWT_SECRET, JWT_EXPIRE_TIME } = process.env;
 
@@ -9,6 +9,7 @@ const createNewToken = (user) => {
     const token = JWT.sign({ ...payload }, JWT_SECRET, {
       expiresIn: JWT_EXPIRE_TIME,
     });
+
     return token;
   } catch (err) {
     return err;
